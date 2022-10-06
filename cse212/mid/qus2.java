@@ -23,3 +23,9 @@ public class Fact {
 		System.out.println("Factorial of " + number + " is: " + fact);
 	}
 }
+
+
+// ## Output: 
+
+Enter The number to get Factorial : 5
+Factorial of 5 is: 120
