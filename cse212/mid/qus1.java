@@ -39,3 +39,13 @@ public class Array {
 
 	}
 }
+
+
+
+
+// ## Output:
+
+Input Array:[43, 54, 23, 65, 78, 85, 88, 92, 10]
+Sum of the given array is: 538
+Average of the given array is: 59.0
+
