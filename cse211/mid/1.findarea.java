@@ -23,3 +23,10 @@ class AreaOfCircle
       System.out.println("Area of Circle is: " + a.area);      
    }
  }
+
+
+//---------------------------------------
+Output: 
+Enter the radius:
+4
+Area of Circle is: 50.26544
