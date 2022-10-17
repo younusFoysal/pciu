@@ -9,17 +9,25 @@ public class Marks {
 		System.out.println("Enter percentage marks:");
 		double percentage = scan.nextDouble();
 
-		if(percentage >= 90){
-			System.out.println("Excellent: Grade A");
-		}else if(percentage < 90 && percentage >= 80){
-			System.out.println("Very Good: Grade B");
-		}else if(percentage < 80 && percentage >= 70){
-			System.out.println("Good: Grade C");
-		}else if(percentage < 70 && percentage >= 60){
-			System.out.println("Satisfactory: Grade D");
-		}else if(percentage < 60 && percentage >= 50){
-			System.out.println("Work Hard: Grade E");
-		}else if(percentage < 50 && percentage >= 40){
+		if(percentage >= 80){
+			System.out.println("Excellent: Grade A+");
+		}else if(percentage < 80 && percentage >= 75){
+			System.out.println("Very Good: Grade A");
+		}else if(percentage < 75 && percentage >= 70){
+			System.out.println("Good: Grade A-");
+		}else if(percentage < 70 && percentage >= 65){
+			System.out.println("Satisfactory: Grade B+");
+		}else if(percentage < 65 && percentage >= 60){
+			System.out.println("Work Hard: Grade B");
+		}else if(percentage < 60 && percentage >= 55){
+			System.out.println("Work Hard: Grade B-");
+		}else if(percentage < 55 && percentage >= 50){
+			System.out.println("Work Hard: Grade C+");
+		}else if(percentage < 50 && percentage >= 45){
+			System.out.println("Work Hard: Grade C");
+		}else if(percentage < 45 && percentage >= 40){
+			System.out.println("Work Hard: Grade D");
+		}else if(percentage < 40 && percentage == 40){
 			System.out.println("Just Passed: Grade F");
 		}else {
 			System.out.println("Failed!");
@@ -32,4 +40,4 @@ public class Marks {
 // ## Output:
 Enter percentage marks:
 77
-Good: Grade C
+Very Good: Grade A
