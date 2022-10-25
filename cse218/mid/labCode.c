@@ -24,14 +24,14 @@ int main()
 void update(int a[],int n)
 {
     int pos;
-    printf("Enter the position : ");
+    printf("\nEnter the location to update an element : ");
     scanf("%d",&pos);
-    scanf("Enter the number :");
+    printf("\nEnter updated the number :");
     int num;
     scanf("%d",&num);
     a[pos-1]=num;
     int i;
-    printf ("After update : ");
+    printf("\nAfter update : ");
     for(i=1; i<=n; i++)
     {
         printf("%d ",a[i]);
