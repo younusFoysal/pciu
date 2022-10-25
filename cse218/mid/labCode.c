@@ -1,99 +1,91 @@
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
 {
-    int n;
-    printf("Enter the size of array : ");
-    scanf("%d",&n);
-    int a[n],i;
-    printf("Enter the elements of array :\n");
-    for(i=1; i<=n; i++)
-    {
-        scanf("%d",&a[i]);
-    }
-    printf(" elements of array :");
-    for(i=1; i<=n; i++)
-    {
-        printf("%d ",a[i]);
-    }
-    insert(a,n);
-    deleteValue(a,n);
-    bubble(a,n);
+    int array[100], position, c, n, value;
+    printf("Enter number of elements in array : ");
+    scanf("%d", &n);
+
+    printf("Enter %d elements :\n", n);
+
+    for (c = 0; c < n; c++)
+        scanf("%d", &array[c]);
+
+    inserting(array,n);
+    deleting(array,n);
+    update(array,n);
+    bobble_sort(array,n);
     return 0;
 }
-void insert(int a[],int n)
+void bobble_sort(int a[],int size)
 {
-    int insrt,temp,i;
-    printf("\nEnter inserting value: ");
-    scanf("%d",&insrt);
-
-    for(i=1; i<=n; i++)
+    printf ("\nAfrer sorting : ");
+    for(int i=0; i<size; i++)
     {
-        if(a[i]>insrt)
+        for (int j=i; j<size-i-1 ; j++ )
         {
-            temp = i;
-            break;
-        }
-    }
-    for(i=n; i>=temp; i--)
-    {
-        a[i+1] = a[i];
-    }
-    a[temp] = insrt;
-    printf("\nAfter inserting value: ");
-    for(i=1; i<=n+1; i++)
-    {
-        printf("%d ",a[i]);
-    }
-}
-void deleteValue(int a[],int n)
-{
-    int delValue,i,temp;
-    printf("\nEnter deleting value: ");
-    scanf("%d",&delValue);
-
-    for(i=1; i<=n; i++)
-    {
-        if(a[i]==delValue)
-        {
-            temp = i;
-        }
-    }
-    for(i=temp; i<=n; i++)
-    {
-        a[i] = a[i+1];
-    }
-
-    printf("\nAfter Deleting value: ");
-    for(i=1; i<=n; i++)
-    {
-        printf("%d ",a[i]);
-    }
-}
-void bubble(int a[],int n)
-{
-    int i,j,temp;
-    for(i=0; i<=n; i++)
-    {
-        for(j=1; j<=n-i-1; j++)
-        {
-            if(a[j]<a[j+1])
+            if(a[j]>a[j+1])
             {
-                temp = a[j];
-                a[j] = a[j+1];
-                a[j+1] = temp;
+                int temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
             }
         }
     }
-    printf("\nbubble sort: ");
-    for(i=1; i<=n; i++)
+    for (int i=0; i<size ; i++ )
     {
-        printf("%d ",a[i]);
+        printf ("%d  ",a[i]);
+
     }
 }
-/*
-input:
-5
-1 2 4 5 6
-3
-4
-*/
+void update(int a[],int size)
+{
+    int num,position,c;
+    printf("\nEnter the location where you wish to update an element : ");
+    scanf("%d", &position);
+    printf ("Enter the number that you wish to update : ");
+    scanf("%d",&num);
+    a[position-1]=num;
+    printf("Resultant array is : ");
+
+    for (int i=0; i<size ; i++ )
+    {
+        printf ("%d  ",a[i]);
+    }
+
+}
+void deleting(int a[],int size)
+{
+    int position,c;
+    printf("\nEnter the location where you wish to delete an element : ");
+    scanf("%d", &position);
+
+    for (c=position; c<size+1; c++)
+        a[c-1] = a[c];
+
+    printf("Resultant array is : ");
+
+    for (c = 0; c < size; c++)
+        printf("%d  ", a[c]);
+
+}
+void inserting (int a[],int size)
+{
+    int position,value,c;
+    printf("Enter the location where you wish to insert an element :");
+    scanf("%d", &position);
+
+    printf("Enter the value to insert : ");
+    scanf("%d", &value);
+
+    for (c = size - 1; c >= position - 1; c--)
+        a[c+1] = a[c];
+
+    a[position-1] = value;
+
+    printf("Resultant array is : ");
+
+    for (c = 0; c <= size; c++)
+        printf("%d  ", a[c]);
+
+}
