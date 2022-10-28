@@ -25,9 +25,9 @@ int main()
 void update(int a[],int n)
 {
     int pos;
-    printf("\nEnter the position : ");
+    printf("\nEnter the position to Update : ");
     scanf("%d",&pos);
-    printf("\nEnter the number :");
+    printf("\nEnter the update number :");
     int num;
     scanf("%d",&num);
     a[pos-1]=num;
