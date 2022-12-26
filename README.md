@@ -1,1 +1,1 @@
-This repo was created for cse courses. 
+This repo is created for CSE Courses. 
